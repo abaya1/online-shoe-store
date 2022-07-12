@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
+const path = require('path');
 const port = process.env.PORT || 3002
+
+app.use(express.static(path.resolve(__dirname, "./frontend/src/index.js")));
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://arronabay:Sunshine360&$@cluster0.s1qrw.mongodb.net/shop?retryWrites=true&w=majority";
